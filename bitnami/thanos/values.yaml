@@ -14,7 +14,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 
@@ -1969,14 +1969,14 @@ compactor:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ## set, choosing the default provisioner.
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param compactor.persistence.accessModes PVC Access Modes for data volume
     ##
     accessModes:
       - ReadWriteOnce
     ## @param compactor.persistence.size PVC Storage Request for data volume
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param compactor.persistence.annotations Annotations for the PVC
     ##
     annotations: {}
@@ -2308,14 +2308,14 @@ storegateway:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ## set, choosing the default provisioner.
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param storegateway.persistence.accessModes PVC Access Modes for data volume
     ##
     accessModes:
       - ReadWriteOnce
     ## @param storegateway.persistence.size PVC Storage Request for data volume
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param storegateway.persistence.annotations Annotations for the PVC
     ##
     annotations: {}
@@ -2916,14 +2916,14 @@ ruler:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ## set, choosing the default provisioner.
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param ruler.persistence.accessModes PVC Access Modes for data volume
     ##
     accessModes:
       - ReadWriteOnce
     ## @param ruler.persistence.size PVC Storage Request for data volume
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param ruler.persistence.annotations Annotations for the PVC
     ##
     annotations: {}
@@ -3439,14 +3439,14 @@ receive:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ## set, choosing the default provisioner.
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param receive.persistence.accessModes PVC Access Modes for data volume
     ##
     accessModes:
       - ReadWriteOnce
     ## @param receive.persistence.size PVC Storage Request for data volume
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param receive.persistence.annotations Annotations for the PVC
     ##
     annotations: {}

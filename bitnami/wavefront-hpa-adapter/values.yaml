@@ -11,7 +11,7 @@ global:
   imageRegistry: ""
   imagePullSecrets: []
   #     - myRegistryKeySecretName
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## Override Kubernetes version
 ## @param kubeVersion Override Kubernetes version

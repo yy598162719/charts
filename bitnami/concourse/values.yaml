@@ -13,7 +13,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 
@@ -912,14 +912,14 @@ worker:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param worker.persistence.accessModes PVC Access Mode for Concourse worker volume
     ##
     accessModes:
       - ReadWriteOnce
     ## @param worker.persistence.size PVC Storage Request for Concourse worker volume
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param worker.persistence.annotations Annotations for the PVC
     ##
     annotations: {}

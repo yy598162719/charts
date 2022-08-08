@@ -15,7 +15,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 ##
@@ -478,14 +478,14 @@ compactor:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param compactor.persistence.accessModes PVC Access modes
     ##
     accessModes:
       - ReadWriteOnce
     ## @param compactor.persistence.size PVC Storage Request for Memcached data volume
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param compactor.persistence.annotations Additional PVC annotations
     ##
     annotations: {}
@@ -1720,7 +1720,7 @@ ingester:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param ingester.persistence.subPath The subdirectory of the volume to mount to
     ##
     subPath: ""
@@ -1730,7 +1730,7 @@ ingester:
       - ReadWriteOnce
     ## @param ingester.persistence.size PVC Storage Request for Memcached data volume
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param ingester.persistence.annotations Additional PVC annotations
     ##
     annotations: {}
@@ -2028,7 +2028,7 @@ querier:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param querier.persistence.subPath The subdirectory of the volume to mount to
     ##
     subPath: ""
@@ -2038,7 +2038,7 @@ querier:
       - ReadWriteOnce
     ## @param querier.persistence.size PVC Storage Request for Memcached data volume
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param querier.persistence.annotations Additional PVC annotations
     ##
     annotations: {}
@@ -2871,7 +2871,7 @@ ruler:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param ruler.persistence.subPath The subdirectory of the volume to mount to
     ##
     subPath: ""
@@ -2881,7 +2881,7 @@ ruler:
       - ReadWriteOnce
     ## @param ruler.persistence.size PVC Storage Request for Memcached data volume
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param ruler.persistence.annotations Additional PVC annotations
     ##
     annotations: {}

@@ -15,7 +15,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common Parameters
 ##
@@ -851,14 +851,14 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: ""
+  storageClass: "storage-nfs"
   ## @param persistence.accessModes PVC Access Mode for Parse volume
   ##
   accessModes:
     - ReadWriteOnce
   ## @param persistence.size PVC Storage Request for Parse volume
   ##
-  size: 8Gi
+  size: 50Gi
   ## @param persistence.existingClaim The name of an existing PVC to use for persistence
   ##
   existingClaim: ""
@@ -974,10 +974,10 @@ mongodb:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param mongodb.persistence.accessMode PVC Access Mode for MongoDB&reg; volume
     ##
     accessMode: ReadWriteOnce
     ## @param mongodb.persistence.size PVC Storage Request for MongoDB&reg; volume
     ##
-    size: 8Gi
+    size: 50Gi

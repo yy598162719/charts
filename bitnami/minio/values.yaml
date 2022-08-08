@@ -14,7 +14,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 
@@ -866,7 +866,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: ""
+  storageClass: "storage-nfs"
   ## @param persistence.mountPath Data volume mount path
   ##
   mountPath: /data
@@ -876,7 +876,7 @@ persistence:
     - ReadWriteOnce
   ## @param persistence.size PVC Storage Request for MinIO&reg; data volume
   ##
-  size: 8Gi
+  size: 50Gi
   ## @param persistence.annotations Annotations for the PVC
   ##
   annotations: {}

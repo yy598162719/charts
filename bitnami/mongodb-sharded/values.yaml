@@ -15,7 +15,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 ##
@@ -488,14 +488,14 @@ configsvr:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param configsvr.persistence.accessModes Use volume as ReadOnly or ReadWrite
     ##
     accessModes:
       - ReadWriteOnce
     ## @param configsvr.persistence.size PersistentVolumeClaim size
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param configsvr.persistence.annotations Persistent Volume annotations
     ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
     ##
@@ -1253,14 +1253,14 @@ shardsvr:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param shardsvr.persistence.accessModes Use volume as ReadOnly or ReadWrite
     ##
     accessModes:
       - ReadWriteOnce
     ## @param shardsvr.persistence.size PersistentVolumeClaim size
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param shardsvr.persistence.annotations Additional volume annotations
     ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
     ##

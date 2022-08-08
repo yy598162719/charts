@@ -229,7 +229,7 @@ path:
 # enabled: true
 # storageClass: "-"
 # accessMode: ReadWriteOnce
-# size: 8Gi
+# size: 50Gi
 # path: /bitnami
 ```
 

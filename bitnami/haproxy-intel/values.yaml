@@ -15,7 +15,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section HAProxy chart parameters
 ## Parameters for the bitnami/haproxy chart deployed by this chart

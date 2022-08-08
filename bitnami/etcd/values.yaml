@@ -15,7 +15,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 ##
@@ -559,7 +559,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: ""
+  storageClass: "storage-nfs"
   ##
   ## @param persistence.annotations [object] Annotations for the PVC
   ##
@@ -570,7 +570,7 @@ persistence:
     - ReadWriteOnce
   ## @param persistence.size PVC Storage Request for etcd data volume
   ##
-  size: 8Gi
+  size: 50Gi
   ## @param persistence.selector [object] Selector to match an existing Persistent Volume
   ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector
   ##

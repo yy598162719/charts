@@ -14,7 +14,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 
@@ -516,7 +516,7 @@ persistence:
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
   ## If undefined (the default) or set to null, no storageClassName spec is set, choosing the default provisioner
   ##
-  storageClass: ""
+  storageClass: "storage-nfs"
   ## @param persistence.existingClaim Use a existing PVC which must be created manually before bound
   ##
   existingClaim: ""
@@ -529,7 +529,7 @@ persistence:
     - ReadWriteOnce
   ## @param persistence.size Persistent Volume size
   ##
-  size: 8Gi
+  size: 50Gi
   ## @param persistence.selector Selector to match an existing Persistent Volume for Ingester's data PVC
   ## If set, the PVC can't have a PV dynamically provisioned for it
   ## E.g.

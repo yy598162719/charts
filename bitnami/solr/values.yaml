@@ -15,7 +15,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 ##
@@ -524,14 +524,14 @@ persistence:
   ## If undefined (the default) or set to null, no storageClassName spec is
   ## set, choosing the default provisioner.
   ##
-  storageClass: ""
+  storageClass: "storage-nfs"
   ## @param persistence.accessModes Persistent Volume Access Modes
   ##
   accessModes:
     - ReadWriteOnce
   ## @param persistence.size Size of data volume
   ##
-  size: 8Gi
+  size: 50Gi
   ## @param persistence.annotations Persistence annotations for Solr
   ##
   annotations: {}
@@ -970,10 +970,10 @@ zookeeper:
   ##
   persistence:
     enabled: true
-    storageClass: ""
+    storageClass: "storage-nfs"
     accessModes:
       - ReadWriteOnce
-    size: 8Gi
+    size: 50Gi
 ## External Zookeeper Configuration
 ## All of these values are only used if `zookeeper.enabled=false`
 ##

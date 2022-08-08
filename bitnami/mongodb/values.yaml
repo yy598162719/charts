@@ -16,7 +16,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
   namespaceOverride: ""
 
 ## @section Common parameters
@@ -928,14 +928,14 @@ persistence:
   ## If undefined (the default) or set to null, no storageClassName spec is
   ## set, choosing the default provisioner.
   ##
-  storageClass: ""
+  storageClass: "storage-nfs"
   ## @param persistence.accessModes PV Access Mode
   ##
   accessModes:
     - ReadWriteOnce
   ## @param persistence.size PVC Storage Request for MongoDB(&reg;) data volume
   ##
-  size: 8Gi
+  size: 50Gi
   ## @param persistence.annotations PVC annotations
   ##
   annotations: {}
@@ -1759,14 +1759,14 @@ hidden:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ## set, choosing the default provisioner.
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param hidden.persistence.accessModes PV Access Mode
     ##
     accessModes:
       - ReadWriteOnce
     ## @param hidden.persistence.size PVC Storage Request for hidden node data volume
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param hidden.persistence.annotations PVC annotations
     ##
     annotations: {}

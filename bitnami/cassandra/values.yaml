@@ -15,7 +15,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 ##
@@ -538,16 +538,16 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: ""
+  storageClass: "storage-nfs"
   ## @param persistence.commitStorageClass PVC Storage Class for Cassandra Commit Log volume
   ## Storage class to use with CASSANDRA_COMMITLOG_DIR to reduce the concurrence for writing data and commit logs
   ## ref: https://github.com/bitnami/containers/tree/main/bitnami/cassandra
-  ## If set to "-", commitStorageClass: "", which disables dynamic provisioning
+  ## If set to "-", commitstorageClass: "storage-nfs", which disables dynamic provisioning
   ## If undefined (the default) or set to null, no storageClassName spec is
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  commitStorageClass: ""
+  commitstorageClass: "storage-nfs"
   ## @param persistence.annotations Persistent Volume Claim annotations
   ##
   annotations: {}
@@ -557,7 +557,7 @@ persistence:
     - ReadWriteOnce
   ## @param persistence.size PVC Storage Request for Cassandra data volume
   ##
-  size: 8Gi
+  size: 50Gi
   ## @param persistence.commitLogsize PVC Storage Request for Cassandra commit log volume. Unset by default
   ##
   commitLogsize: 2Gi

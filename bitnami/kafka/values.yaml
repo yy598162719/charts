@@ -14,7 +14,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 
@@ -900,14 +900,14 @@ persistence:
   ## If undefined (the default) or set to null, no storageClassName spec is
   ## set, choosing the default provisioner.
   ##
-  storageClass: ""
+  storageClass: "storage-nfs"
   ## @param persistence.accessModes Persistent Volume Access Modes
   ##
   accessModes:
     - ReadWriteOnce
   ## @param persistence.size PVC Storage Request for Kafka data volume
   ##
-  size: 8Gi
+  size: 50Gi
   ## @param persistence.annotations Annotations for the PVC
   ##
   annotations: {}
@@ -937,14 +937,14 @@ logPersistence:
   ## If undefined (the default) or set to null, no storageClassName spec is
   ## set, choosing the default provisioner.
   ##
-  storageClass: ""
+  storageClass: "storage-nfs"
   ## @param logPersistence.accessModes Persistent Volume Access Modes
   ##
   accessModes:
     - ReadWriteOnce
   ## @param logPersistence.size PVC Storage Request for Kafka logs volume
   ##
-  size: 8Gi
+  size: 50Gi
   ## @param logPersistence.annotations Annotations for the PVC
   ##
   annotations: {}
@@ -1668,10 +1668,10 @@ zookeeper:
   ##
   persistence:
     enabled: true
-    storageClass: ""
+    storageClass: "storage-nfs"
     accessModes:
       - ReadWriteOnce
-    size: 8Gi
+    size: 50Gi
 
 ## External Zookeeper Configuration
 ## All of these values are only used if `zookeeper.enabled=false`

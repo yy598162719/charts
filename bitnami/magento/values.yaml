@@ -14,7 +14,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 
@@ -529,10 +529,10 @@ mariadb:
       ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
       ##   GKE, AWS & OpenStack)
       ##
-      storageClass: ""
+      storageClass: "storage-nfs"
       accessModes:
         - ReadWriteOnce
-      size: 8Gi
+      size: 50Gi
       ## Set path in case you want to use local host path volumes (not recommended in production)
       ##
       hostPath: ""
@@ -631,7 +631,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: ""
+  storageClass: "storage-nfs"
   ## @param persistence.accessModes PVC Access Modes for Magento volume
   ## Requires persistence.enabled: true
   ## If defined, PVC must be created manually before volume will be bound
@@ -640,7 +640,7 @@ persistence:
     - ReadWriteOnce
   ## @param persistence.size PVC Storage Request for Magento volume
   ##
-  size: 8Gi
+  size: 50Gi
   ## @param persistence.existingClaim An Existing PVC name for Magento volume
   ## Requires persistence.enabled: true
   ## If defined, PVC must be created manually before volume will be bound

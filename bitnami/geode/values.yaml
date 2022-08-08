@@ -14,7 +14,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 
@@ -482,7 +482,7 @@ locator:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param locator.persistence.annotations MariaDB secondary persistent volume claim annotations
     ##
     annotations: {}
@@ -492,7 +492,7 @@ locator:
       - ReadWriteOnce
     ## @param locator.persistence.size MariaDB secondary persistent volume size
     ##
-    size: 8Gi
+    size: 50Gi
 
 ## @section Apache Geode Cache Server parameters
 
@@ -789,7 +789,7 @@ server:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param server.persistence.annotations MariaDB secondary persistent volume claim annotations
     ##
     annotations: {}
@@ -799,7 +799,7 @@ server:
       - ReadWriteOnce
     ## @param server.persistence.size MariaDB secondary persistent volume size
     ##
-    size: 8Gi
+    size: 50Gi
 
 ## @section Traffic Exposure Parameters
 

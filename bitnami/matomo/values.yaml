@@ -15,7 +15,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 ##
@@ -224,7 +224,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: ""
+  storageClass: "storage-nfs"
   ## @param persistence.accessModes PVC Access Mode for Matomo volume
   ## Requires persistence.enabled: true
   ## If defined, PVC must be created manually before volume will be bound
@@ -233,7 +233,7 @@ persistence:
     - ReadWriteOnce
   ## @param persistence.size PVC Storage Request for Matomo volume
   ##
-  size: 8Gi
+  size: 50Gi
   ## @param persistence.dataSource Custom PVC data source
   ##
   dataSource: {}
@@ -620,10 +620,10 @@ mariadb:
       ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
       ##   GKE, AWS & OpenStack)
       ##
-      storageClass: ""
+      storageClass: "storage-nfs"
       accessModes:
         - ReadWriteOnce
-      size: 8Gi
+      size: 50Gi
       hostPath: ""
       existingClaim: ""
 ## External database configuration

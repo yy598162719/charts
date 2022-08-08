@@ -14,7 +14,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 
@@ -619,7 +619,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: ""
+  storageClass: "storage-nfs"
   ## @param persistence.annotations Persistent Volume Claim annotations
   ##
   annotations: {}
@@ -632,7 +632,7 @@ persistence:
     - ReadWriteOnce
   ## @param persistence.size Persistent Volume Size
   ##
-  size: 8Gi
+  size: 50Gi
 ## @param priorityClassName Priority Class Name for Statefulset
 ##
 priorityClassName: ""

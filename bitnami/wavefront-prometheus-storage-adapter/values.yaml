@@ -13,7 +13,7 @@ global:
   ## E.g.
   ## imagePullSecrets:
   ##   - myRegistryKeySecretName
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 ##

@@ -15,7 +15,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common parameters
 ##
@@ -987,14 +987,14 @@ prometheus:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ## set, choosing the default provisioner.
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param prometheus.persistence.accessModes Persistent Volume Access Modes
     ##
     accessModes:
       - ReadWriteOnce
     ## @param prometheus.persistence.size Persistent Volume Size
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param prometheus.persistence.annotations Persistent Volume Claim annotations
     ##
     annotations: {}
@@ -1828,14 +1828,14 @@ alertmanager:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ## set, choosing the default provisioner.
     ##
-    storageClass: ""
+    storageClass: "storage-nfs"
     ## @param alertmanager.persistence.accessModes Persistent Volume Access Modes
     ##
     accessModes:
       - ReadWriteOnce
     ## @param alertmanager.persistence.size Persistent Volume Size
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param alertmanager.persistence.annotations Persistent Volume Claim annotations
     ##
     annotations: {}

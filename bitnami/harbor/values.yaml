@@ -15,7 +15,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "storage-nfs"
 
 ## @section Common Parameters
 ##
@@ -437,7 +437,7 @@ persistence:
     ##
     registry:
       existingClaim: ""
-      storageClass: ""
+      storageClass: "storage-nfs"
       subPath: ""
       accessModes:
         - ReadWriteOnce
@@ -455,7 +455,7 @@ persistence:
     ##
     jobservice:
       existingClaim: ""
-      storageClass: ""
+      storageClass: "storage-nfs"
       subPath: ""
       accessModes:
         - ReadWriteOnce
@@ -473,7 +473,7 @@ persistence:
     ##
     chartmuseum:
       existingClaim: ""
-      storageClass: ""
+      storageClass: "storage-nfs"
       subPath: ""
       accessModes:
         - ReadWriteOnce
@@ -488,7 +488,7 @@ persistence:
     ## @param persistence.persistentVolumeClaim.trivy.selector Selector to match an existing Persistent Volume
     ##
     trivy:
-      storageClass: ""
+      storageClass: "storage-nfs"
       accessModes:
         - ReadWriteOnce
       size: 5Gi
@@ -574,7 +574,7 @@ persistence:
       v4auth: ""
       chunksize: ""
       rootdirectory: ""
-      storageClass: ""
+      storageClass: "storage-nfs"
       sse: ""
     ## Images/charts storage parameters when type is "swift"
     ## @param persistence.imageChartStorage.swift.authurl Swift storage type setting: Authentication url
